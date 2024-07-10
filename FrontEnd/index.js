@@ -89,7 +89,7 @@ async function filterCategory() {
         btn.addEventListener("click", (e) => {
             console.log(e.target.id); // regarde sur quoi tu clique et tu m affiche son id
             let btnId = parseInt(e.target.id) // convertir le string en int 
-            console.log(typeof btnId)
+
 
             if (btnId !== 0) {
 
