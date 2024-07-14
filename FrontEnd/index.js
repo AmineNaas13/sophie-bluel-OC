@@ -320,6 +320,24 @@ async function checkModalField() {
     inputFile.addEventListener("change", disabledSubmitButton)
 }
 
+function disabledSubmitButton() {
+
+    const inputFile = document.querySelector(".containerFile input");
+    const titleElement = document.querySelector("#title");
+    const categoryElement = document.querySelector("#category");
+
+    // Vérifier si tous les champs sont remplis
+    const submitButton = document.querySelector(".validatePicBtn")
+    if (titleElement.value === "" || categoryElement.value === "" || inputFile.files[0] === undefined) {
+
+        submitButton.disabled = true
+
+    } else {
+        submitButton.disabled = false
+    }
+}
+
+checkModalField()
 
 
 
