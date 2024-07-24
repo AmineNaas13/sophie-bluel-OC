@@ -44,10 +44,11 @@ async function createWorks(project) {
 // 2- Récupérer les categories depuis le back-end
 
 //a- retourner les catégories
+const urlCategories = "http://localhost:5678/api/categories"
 
 async function getCategories() {
 
-    const response = await fetch("http://localhost:5678/api/categories")
+    const response = await fetch(urlCategories)
     const responseJson = await response.json()
     return responseJson
 }
