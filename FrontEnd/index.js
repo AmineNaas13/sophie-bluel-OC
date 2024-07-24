@@ -3,9 +3,10 @@ const categories = document.querySelector(".categories")
 // 1 - Récupérer les projets depuis le back-end
 
 //a- retourner les projets 
+const urlWork = " http://localhost:5678/api/works"
 
 async function getWorks() {
-    const response = await fetch("http://localhost:5678/api/works")
+    const response = await fetch(urlWork)
     const responseJson = response.json()
 
     return responseJson
@@ -283,7 +284,7 @@ async function addNewProject(e) {
     payload.append("category", categoryElement.value);
 
     try {
-        const responseProject = await fetch("http://localhost:5678/api/works", {
+        const responseProject = await fetch(urlWork, {
             method: "POST",
             headers: {
                 Accept: "application/json",

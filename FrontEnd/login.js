@@ -1,6 +1,7 @@
 function login() {
 
     const formUsers = document.querySelector(".form")
+    const loginUrl = "http://localhost:5678/api/users/login"
 
     formUsers.addEventListener("submit", async (event) => {
         // bloquer par défaut le comportement du navigateur 
@@ -17,7 +18,7 @@ function login() {
 
         // Appel de la fonction fetch avec toutes les informations necessaires
 
-        const response = await fetch("http://localhost:5678/api/users/login", {
+        const response = await fetch(loginUrl, {
             method: "POST",
             headers: {
                 Accept: "application/json",
